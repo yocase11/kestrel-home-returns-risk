@@ -1,0 +1,636 @@
+{
+  "majority_class_baseline": {
+    "support": 2126,
+    "positive_count": 245,
+    "positive_rate": 0.11523988711194733,
+    "threshold": 0.5,
+    "accuracy": 0.8847601128880527,
+    "precision": 0.0,
+    "recall": 0.0,
+    "specificity": 1.0,
+    "balanced_accuracy": 0.5,
+    "f1": 0.0,
+    "roc_auc": 0.5,
+    "pr_auc": 0.11523988711194733,
+    "confusion_matrix_labels_0_1": [
+      [
+        1881,
+        0
+      ],
+      [
+        245,
+        0
+      ]
+    ],
+    "brier_score": 0.11523988711194733,
+    "log_loss": 4.1536665476640175,
+    "expected_calibration_error": 0.11523988711194733,
+    "calibration_bins": [
+      {
+        "mean_predicted_probability": 0.0,
+        "observed_positive_fraction": 0.11523988711194733
+      }
+    ]
+  },
+  "lightgbm": {
+    "support": 2126,
+    "positive_count": 245,
+    "positive_rate": 0.11523988711194733,
+    "threshold": 0.5,
+    "accuracy": 0.8838193791157103,
+    "precision": 0.4,
+    "recall": 0.0163265306122449,
+    "specificity": 0.9968102073365231,
+    "balanced_accuracy": 0.5065683689743841,
+    "f1": 0.03137254901960784,
+    "roc_auc": 0.6901300871225683,
+    "pr_auc": 0.22579848542102535,
+    "confusion_matrix_labels_0_1": [
+      [
+        1875,
+        6
+      ],
+      [
+        241,
+        4
+      ]
+    ],
+    "brier_score": 0.09724044691412591,
+    "log_loss": 0.33446133511559817,
+    "expected_calibration_error": 0.0533434892122522,
+    "calibration_bins": [
+      {
+        "mean_predicted_probability": 0.06095474476835688,
+        "observed_positive_fraction": 0.06386861313868614
+      },
+      {
+        "mean_predicted_probability": 0.14043229250472686,
+        "observed_positive_fraction": 0.13443072702331962
+      },
+      {
+        "mean_predicted_probability": 0.2438084052918851,
+        "observed_positive_fraction": 0.23404255319148937
+      },
+      {
+        "mean_predicted_probability": 0.34064572614020044,
+        "observed_positive_fraction": 0.25333333333333335
+      },
+      {
+        "mean_predicted_probability": 0.43999339636578755,
+        "observed_positive_fraction": 0.35714285714285715
+      },
+      {
+        "mean_predicted_probability": 0.5312167172915835,
+        "observed_positive_fraction": 0.4
+      }
+    ],
+    "weight_tuning": {
+      "selected_positive_class_weight": 1,
+      "best_average_precision": 0.21341988244732774,
+      "best_parameters": {
+        "classifier__num_leaves": 15,
+        "classifier__n_estimators": 200,
+        "classifier__min_child_samples": 10,
+        "classifier__max_depth": 5,
+        "classifier__learning_rate": 0.03,
+        "classifier__class_weight": null
+      },
+      "weight_experiments": [
+        {
+          "positive_class_weight": 1,
+          "average_precision": 0.21341988244732774,
+          "best_parameters": {
+            "classifier__num_leaves": 15,
+            "classifier__n_estimators": 200,
+            "classifier__min_child_samples": 10,
+            "classifier__max_depth": 5,
+            "classifier__learning_rate": 0.03
+          }
+        },
+        {
+          "positive_class_weight": 2,
+          "average_precision": 0.19934370941125426,
+          "best_parameters": {
+            "classifier__num_leaves": 15,
+            "classifier__n_estimators": 300,
+            "classifier__min_child_samples": 20,
+            "classifier__max_depth": -1,
+            "classifier__learning_rate": 0.08
+          }
+        },
+        {
+          "positive_class_weight": 3,
+          "average_precision": 0.1847704856910555,
+          "best_parameters": {
+            "classifier__num_leaves": 47,
+            "classifier__n_estimators": 700,
+            "classifier__min_child_samples": 20,
+            "classifier__max_depth": 8,
+            "classifier__learning_rate": 0.03
+          }
+        },
+        {
+          "positive_class_weight": 4,
+          "average_precision": 0.21331975211007853,
+          "best_parameters": {
+            "classifier__num_leaves": 31,
+            "classifier__n_estimators": 700,
+            "classifier__min_child_samples": 60,
+            "classifier__max_depth": 8,
+            "classifier__learning_rate": 0.01
+          }
+        },
+        {
+          "positive_class_weight": 5,
+          "average_precision": 0.1997132647966247,
+          "best_parameters": {
+            "classifier__num_leaves": 63,
+            "classifier__n_estimators": 300,
+            "classifier__min_child_samples": 10,
+            "classifier__max_depth": 8,
+            "classifier__learning_rate": 0.01
+          }
+        },
+        {
+          "positive_class_weight": 6,
+          "average_precision": 0.20130615602812657,
+          "best_parameters": {
+            "classifier__num_leaves": 15,
+            "classifier__n_estimators": 200,
+            "classifier__min_child_samples": 10,
+            "classifier__max_depth": -1,
+            "classifier__learning_rate": 0.05
+          }
+        },
+        {
+          "positive_class_weight": 7,
+          "average_precision": 0.18552351843435078,
+          "best_parameters": {
+            "classifier__num_leaves": 47,
+            "classifier__n_estimators": 500,
+            "classifier__min_child_samples": 40,
+            "classifier__max_depth": 8,
+            "classifier__learning_rate": 0.03
+          }
+        }
+      ]
+    }
+  },
+  "catboost": {
+    "support": 2126,
+    "positive_count": 245,
+    "positive_rate": 0.11523988711194733,
+    "threshold": 0.5,
+    "accuracy": 0.8433678269049859,
+    "precision": 0.28640776699029125,
+    "recall": 0.24081632653061225,
+    "specificity": 0.9218500797448166,
+    "balanced_accuracy": 0.5813332031377144,
+    "f1": 0.2616407982261641,
+    "roc_auc": 0.7022382796818887,
+    "pr_auc": 0.24941089491715634,
+    "confusion_matrix_labels_0_1": [
+      [
+        1734,
+        147
+      ],
+      [
+        186,
+        59
+      ]
+    ],
+    "brier_score": 0.1375903073143685,
+    "log_loss": 0.44567330416751183,
+    "expected_calibration_error": 0.22087997747143442,
+    "calibration_bins": [
+      {
+        "mean_predicted_probability": 0.09392162427437004,
+        "observed_positive_fraction": 0.0
+      },
+      {
+        "mean_predicted_probability": 0.16050427601523992,
+        "observed_positive_fraction": 0.03339517625231911
+      },
+      {
+        "mean_predicted_probability": 0.2510898098306758,
+        "observed_positive_fraction": 0.08231173380035026
+      },
+      {
+        "mean_predicted_probability": 0.34609548608566837,
+        "observed_positive_fraction": 0.12449799196787148
+      },
+      {
+        "mean_predicted_probability": 0.44420192798856395,
+        "observed_positive_fraction": 0.19155844155844157
+      },
+      {
+        "mean_predicted_probability": 0.541292287408823,
+        "observed_positive_fraction": 0.24193548387096775
+      },
+      {
+        "mean_predicted_probability": 0.6400354561650233,
+        "observed_positive_fraction": 0.32786885245901637
+      },
+      {
+        "mean_predicted_probability": 0.7197804494927169,
+        "observed_positive_fraction": 0.4
+      },
+      {
+        "mean_predicted_probability": 0.8074338401092049,
+        "observed_positive_fraction": 1.0
+      }
+    ],
+    "weight_tuning": {
+      "selected_positive_class_weight": 4,
+      "best_average_precision": 0.25110045746627907,
+      "best_parameters": {
+        "classifier__learning_rate": 0.01,
+        "classifier__l2_leaf_reg": 7,
+        "classifier__iterations": 700,
+        "classifier__depth": 4,
+        "classifier__scale_pos_weight": 4.0
+      },
+      "weight_experiments": [
+        {
+          "positive_class_weight": 1,
+          "average_precision": 0.20180956992689464,
+          "best_parameters": {
+            "classifier__learning_rate": 0.03,
+            "classifier__l2_leaf_reg": 3,
+            "classifier__iterations": 900,
+            "classifier__depth": 8
+          }
+        },
+        {
+          "positive_class_weight": 2,
+          "average_precision": 0.23650902750491246,
+          "best_parameters": {
+            "classifier__learning_rate": 0.01,
+            "classifier__l2_leaf_reg": 5,
+            "classifier__iterations": 500,
+            "classifier__depth": 8
+          }
+        },
+        {
+          "positive_class_weight": 3,
+          "average_precision": 0.24256964456688043,
+          "best_parameters": {
+            "classifier__learning_rate": 0.01,
+            "classifier__l2_leaf_reg": 3,
+            "classifier__iterations": 700,
+            "classifier__depth": 4
+          }
+        },
+        {
+          "positive_class_weight": 4,
+          "average_precision": 0.25110045746627907,
+          "best_parameters": {
+            "classifier__learning_rate": 0.01,
+            "classifier__l2_leaf_reg": 7,
+            "classifier__iterations": 700,
+            "classifier__depth": 4
+          }
+        },
+        {
+          "positive_class_weight": 5,
+          "average_precision": 0.23924968665608773,
+          "best_parameters": {
+            "classifier__learning_rate": 0.01,
+            "classifier__l2_leaf_reg": 7,
+            "classifier__iterations": 300,
+            "classifier__depth": 8
+          }
+        },
+        {
+          "positive_class_weight": 6,
+          "average_precision": 0.24436470059316656,
+          "best_parameters": {
+            "classifier__learning_rate": 0.01,
+            "classifier__l2_leaf_reg": 3,
+            "classifier__iterations": 300,
+            "classifier__depth": 4
+          }
+        }
+      ]
+    }
+  },
+  "xgboost": {
+    "support": 2126,
+    "positive_count": 245,
+    "positive_rate": 0.11523988711194733,
+    "threshold": 0.5,
+    "accuracy": 0.7662276575729069,
+    "precision": 0.22246696035242292,
+    "recall": 0.4122448979591837,
+    "specificity": 0.8123338649654439,
+    "balanced_accuracy": 0.6122893814623138,
+    "f1": 0.28898426323319026,
+    "roc_auc": 0.6983584502381495,
+    "pr_auc": 0.23597997941379328,
+    "confusion_matrix_labels_0_1": [
+      [
+        1528,
+        353
+      ],
+      [
+        144,
+        101
+      ]
+    ],
+    "brier_score": 0.17942213486423766,
+    "log_loss": 0.5439586507919855,
+    "expected_calibration_error": 0.2875113525110859,
+    "calibration_bins": [
+      {
+        "mean_predicted_probability": 0.19229251031692213,
+        "observed_positive_fraction": 0.0
+      },
+      {
+        "mean_predicted_probability": 0.2544688085620185,
+        "observed_positive_fraction": 0.03625954198473282
+      },
+      {
+        "mean_predicted_probability": 0.3558867175170707,
+        "observed_positive_fraction": 0.0847750865051903
+      },
+      {
+        "mean_predicted_probability": 0.4455820028293925,
+        "observed_positive_fraction": 0.13644524236983843
+      },
+      {
+        "mean_predicted_probability": 0.5395529508590698,
+        "observed_positive_fraction": 0.178125
+      },
+      {
+        "mean_predicted_probability": 0.6399275860909758,
+        "observed_positive_fraction": 0.31896551724137934
+      },
+      {
+        "mean_predicted_probability": 0.7283281683921814,
+        "observed_positive_fraction": 0.3888888888888889
+      }
+    ],
+    "weight_tuning": {
+      "selected_positive_class_weight": 6,
+      "best_average_precision": 0.24660346864075147,
+      "best_parameters": {
+        "classifier__subsample": 0.8,
+        "classifier__n_estimators": 200,
+        "classifier__min_child_weight": 3,
+        "classifier__max_depth": 4,
+        "classifier__learning_rate": 0.01,
+        "classifier__colsample_bytree": 0.8,
+        "classifier__scale_pos_weight": 6.0
+      },
+      "weight_experiments": [
+        {
+          "positive_class_weight": 1,
+          "average_precision": 0.2103273646488667,
+          "best_parameters": {
+            "classifier__subsample": 0.7,
+            "classifier__n_estimators": 200,
+            "classifier__min_child_weight": 1,
+            "classifier__max_depth": 6,
+            "classifier__learning_rate": 0.05,
+            "classifier__colsample_bytree": 0.9
+          }
+        },
+        {
+          "positive_class_weight": 2,
+          "average_precision": 0.23319034718672232,
+          "best_parameters": {
+            "classifier__subsample": 0.8,
+            "classifier__n_estimators": 200,
+            "classifier__min_child_weight": 8,
+            "classifier__max_depth": 6,
+            "classifier__learning_rate": 0.01,
+            "classifier__colsample_bytree": 0.9
+          }
+        },
+        {
+          "positive_class_weight": 3,
+          "average_precision": 0.2100259197447389,
+          "best_parameters": {
+            "classifier__subsample": 0.7,
+            "classifier__n_estimators": 200,
+            "classifier__min_child_weight": 5,
+            "classifier__max_depth": 4,
+            "classifier__learning_rate": 0.08,
+            "classifier__colsample_bytree": 0.9
+          }
+        },
+        {
+          "positive_class_weight": 4,
+          "average_precision": 0.19497936378574615,
+          "best_parameters": {
+            "classifier__subsample": 1.0,
+            "classifier__n_estimators": 200,
+            "classifier__min_child_weight": 3,
+            "classifier__max_depth": 6,
+            "classifier__learning_rate": 0.08,
+            "classifier__colsample_bytree": 0.8
+          }
+        },
+        {
+          "positive_class_weight": 5,
+          "average_precision": 0.21487896829905145,
+          "best_parameters": {
+            "classifier__subsample": 0.9,
+            "classifier__n_estimators": 300,
+            "classifier__min_child_weight": 1,
+            "classifier__max_depth": 3,
+            "classifier__learning_rate": 0.05,
+            "classifier__colsample_bytree": 0.8
+          }
+        },
+        {
+          "positive_class_weight": 6,
+          "average_precision": 0.24660346864075147,
+          "best_parameters": {
+            "classifier__subsample": 0.8,
+            "classifier__n_estimators": 200,
+            "classifier__min_child_weight": 3,
+            "classifier__max_depth": 4,
+            "classifier__learning_rate": 0.01,
+            "classifier__colsample_bytree": 0.8
+          }
+        },
+        {
+          "positive_class_weight": 7,
+          "average_precision": 0.21420943011264165,
+          "best_parameters": {
+            "classifier__subsample": 0.9,
+            "classifier__n_estimators": 500,
+            "classifier__min_child_weight": 5,
+            "classifier__max_depth": 4,
+            "classifier__learning_rate": 0.03,
+            "classifier__colsample_bytree": 0.7
+          }
+        }
+      ]
+    }
+  },
+  "hybrid_stacking_default_threshold": {
+    "support": 2126,
+    "positive_count": 245,
+    "positive_rate": 0.11523988711194733,
+    "threshold": 0.5,
+    "accuracy": 0.8852304797742239,
+    "precision": 1.0,
+    "recall": 0.004081632653061225,
+    "specificity": 1.0,
+    "balanced_accuracy": 0.5020408163265306,
+    "f1": 0.008130081300813009,
+    "roc_auc": 0.7018498627521185,
+    "pr_auc": 0.24599440729725353,
+    "confusion_matrix_labels_0_1": [
+      [
+        1881,
+        0
+      ],
+      [
+        244,
+        1
+      ]
+    ],
+    "brier_score": 0.09620391170419437,
+    "log_loss": 0.3327706151897332,
+    "expected_calibration_error": 0.10254153672715287,
+    "calibration_bins": [
+      {
+        "mean_predicted_probability": 0.07552778380127416,
+        "observed_positive_fraction": 0.05017103762827822
+      },
+      {
+        "mean_predicted_probability": 0.13886902392853218,
+        "observed_positive_fraction": 0.12876427829698858
+      },
+      {
+        "mean_predicted_probability": 0.23853192063676018,
+        "observed_positive_fraction": 0.22660098522167488
+      },
+      {
+        "mean_predicted_probability": 0.33863234104145373,
+        "observed_positive_fraction": 0.36666666666666664
+      },
+      {
+        "mean_predicted_probability": 0.4285657069690535,
+        "observed_positive_fraction": 0.36363636363636365
+      },
+      {
+        "mean_predicted_probability": 0.5251068758146104,
+        "observed_positive_fraction": 1.0
+      }
+    ]
+  },
+  "hybrid_stacking": {
+    "support": 2126,
+    "positive_count": 245,
+    "positive_rate": 0.11523988711194733,
+    "threshold": 0.16385653179995627,
+    "accuracy": 0.757761053621825,
+    "precision": 0.2289156626506024,
+    "recall": 0.46530612244897956,
+    "specificity": 0.79585326953748,
+    "balanced_accuracy": 0.6305796959932298,
+    "f1": 0.30686406460296095,
+    "roc_auc": 0.7018498627521185,
+    "pr_auc": 0.24599440729725353,
+    "confusion_matrix_labels_0_1": [
+      [
+        1497,
+        384
+      ],
+      [
+        131,
+        114
+      ]
+    ],
+    "brier_score": 0.09620391170419437,
+    "log_loss": 0.3327706151897332,
+    "expected_calibration_error": 0.10254153672715287,
+    "calibration_bins": [
+      {
+        "mean_predicted_probability": 0.07552778380127416,
+        "observed_positive_fraction": 0.05017103762827822
+      },
+      {
+        "mean_predicted_probability": 0.13886902392853218,
+        "observed_positive_fraction": 0.12876427829698858
+      },
+      {
+        "mean_predicted_probability": 0.23853192063676018,
+        "observed_positive_fraction": 0.22660098522167488
+      },
+      {
+        "mean_predicted_probability": 0.33863234104145373,
+        "observed_positive_fraction": 0.36666666666666664
+      },
+      {
+        "mean_predicted_probability": 0.4285657069690535,
+        "observed_positive_fraction": 0.36363636363636365
+      },
+      {
+        "mean_predicted_probability": 0.5251068758146104,
+        "observed_positive_fraction": 1.0
+      }
+    ]
+  },
+  "hybrid_stacking_detailed": {
+    "support": 2126,
+    "positive_count": 245,
+    "positive_rate": 0.11523988711194733,
+    "accuracy": 0.757761053621825,
+    "balanced_accuracy": 0.6305796959932298,
+    "precision": 0.2289156626506024,
+    "recall": 0.46530612244897956,
+    "f1": 0.30686406460296095,
+    "f2": 0.38565629228687415,
+    "average_precision": 0.24599440729725353,
+    "brier_score": 0.09620391170419437,
+    "threshold": 0.16385653179995627,
+    "true_negatives": 1497,
+    "false_positives": 384,
+    "false_negatives": 131,
+    "true_positives": 114
+  },
+  "_selection": {
+    "architecture": "LightGBM + CatBoost + XGBoost + LogisticRegression meta learner",
+    "meta_learner": "L2 Logistic Regression",
+    "calibration": "Sigmoid Platt scaling",
+    "threshold": 0.16385653179995627,
+    "threshold_objective": "precision_and_recall_constraints_then_f1",
+    "target_precision": 0.8,
+    "target_recall": 0.9,
+    "threshold_selection_details": {
+      "meta_training_rows": 1508,
+      "calibration_rows": 503,
+      "threshold_selection_rows": 503,
+      "meta_training_positive_rate": 0.11206896551724138,
+      "calibration_positive_rate": 0.1312127236580517,
+      "threshold_selection_positive_rate": 0.11133200795228629,
+      "meta_training_period": {
+        "start_index": 5864,
+        "end_index": 7371
+      },
+      "calibration_period": {
+        "start_index": 7372,
+        "end_index": 7874
+      },
+      "threshold_period": {
+        "start_index": 7875,
+        "end_index": 8377
+      },
+      "threshold_objective": "precision_and_recall_constraints_then_f1",
+      "target_precision": 0.8,
+      "target_recall": 0.9,
+      "target_status": "TARGETS_NOT_SIMULTANEOUSLY_MET_ON_OOF",
+      "oof_precision_at_threshold": 0.26605504587155965,
+      "oof_recall_at_threshold": 0.5178571428571429,
+      "oof_f1_at_threshold": 0.3515151515151515,
+      "selected_threshold": 0.16385653179995627,
+      "threshold_selection_positive_count": 56
+    },
+    "validation_holdout_used_for_selection": false
+  }
+}

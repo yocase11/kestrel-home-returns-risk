@@ -1,0 +1,117 @@
+{
+  "status": "EXPLORATORY ONLY",
+  "production_status": "BLOCKED",
+  "feature_names": [
+    "sales_channel",
+    "payment_mode",
+    "is_gift",
+    "sku",
+    "product_family",
+    "product_model_name",
+    "pincode_prefix",
+    "discount_pct",
+    "qty",
+    "promised_delivery_days",
+    "customer_prior_orders",
+    "smoothed_prior_return_rate",
+    "is_first_time_buyer",
+    "is_zero_pincode",
+    "has_note",
+    "note_length",
+    "note_has_gift",
+    "note_has_urgent",
+    "note_has_call",
+    "note_has_office",
+    "note_has_leave",
+    "note_has_open_box",
+    "order_hour",
+    "day_of_week",
+    "is_weekend",
+    "is_post_oct2025",
+    "days_since_launch",
+    "discount_diff_from_family"
+  ],
+  "categorical_features": [
+    "sales_channel",
+    "payment_mode",
+    "is_gift",
+    "sku",
+    "product_family",
+    "product_model_name",
+    "pincode_prefix"
+  ],
+  "blend_weights": {
+    "logistic_regression": 0.86,
+    "catboost": 0.14
+  },
+  "risk_tier_thresholds": [
+    0.05338723947569979,
+    0.11124764387187328
+  ],
+  "risk_tier_basis": "Full-history expanding OOF blended score tertiles; relative bands, not business thresholds.",
+  "calibration": {
+    "catboost": {
+      "selected_method": "sigmoid",
+      "selection_fold": 3,
+      "selection_brier_scores": {
+        "sigmoid": 0.08976578802933459,
+        "isotonic": 0.09041907947161582
+      },
+      "oof_calibration_rows": 6282,
+      "calibrator_training_rows": 6282
+    },
+    "logistic_regression": {
+      "selected_method": "sigmoid",
+      "selection_fold": 3,
+      "selection_brier_scores": {
+        "sigmoid": 0.09523458848224371,
+        "isotonic": 0.09534998319446664
+      },
+      "oof_calibration_rows": 6282,
+      "calibrator_training_rows": 6282
+    }
+  },
+  "oof_folds": [
+    {
+      "fold": 1,
+      "train_rows": 2096,
+      "validation_rows": 2094,
+      "train_last_timestamp": "2025-07-04 18:18:00",
+      "validation_start": "2025-07-04 18:40:00",
+      "validation_end": "2025-10-02 01:08:00"
+    },
+    {
+      "fold": 2,
+      "train_rows": 4190,
+      "validation_rows": 2094,
+      "train_last_timestamp": "2025-10-02 01:08:00",
+      "validation_start": "2025-10-02 01:59:00",
+      "validation_end": "2026-01-02 15:10:00"
+    },
+    {
+      "fold": 3,
+      "train_rows": 6284,
+      "validation_rows": 2094,
+      "train_last_timestamp": "2026-01-02 15:10:00",
+      "validation_start": "2026-01-02 15:49:00",
+      "validation_end": "2026-03-31 21:29:00"
+    }
+  ],
+  "label_maturity": "UNVERIFIED",
+  "q2_holdout_was_used_for_gate": true,
+  "test_labels_used": false,
+  "q2_holdout_metrics": {
+    "roc_auc": 0.7568423222558561,
+    "pr_auc": 0.3735947141837897,
+    "brier_score": 0.09079543188900306
+  },
+  "top_15_percent": {
+    "flagged_count": 319,
+    "true_positive_count": 101,
+    "positive_count": 245,
+    "return_capture_rate": 0.4122448979591837,
+    "random_baseline_capture_rate": 0.15,
+    "lift_vs_random": 2.748299319727891,
+    "precision": 0.3166144200626959
+  }
+}

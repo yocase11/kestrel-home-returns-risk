@@ -1,0 +1,356 @@
+{
+  "status": "EXPLORATORY ONLY",
+  "raw_delivery_note_saved": false,
+  "logistic_regression": [
+    {
+      "feature": "numeric__smoothed_prior_return_rate",
+      "coefficient": 0.45041301159404507,
+      "direction": "raises"
+    },
+    {
+      "feature": "numeric__promised_delivery_days",
+      "coefficient": 0.39010797467728353,
+      "direction": "raises"
+    },
+    {
+      "feature": "categorical__product_family_Robot Vacuum",
+      "coefficient": 0.3275189544612189,
+      "direction": "raises"
+    },
+    {
+      "feature": "categorical__payment_mode_cod",
+      "coefficient": 0.3131319711960534,
+      "direction": "raises"
+    },
+    {
+      "feature": "categorical__payment_zero_pincode_cod_0",
+      "coefficient": 0.28091002194989045,
+      "direction": "raises"
+    },
+    {
+      "feature": "categorical__payment_channel_cod_partner_outlet",
+      "coefficient": 0.2628581169607499,
+      "direction": "raises"
+    },
+    {
+      "feature": "categorical__sales_channel_partner_outlet",
+      "coefficient": -0.25665340033538475,
+      "direction": "lowers"
+    },
+    {
+      "feature": "categorical__is_gift_N",
+      "coefficient": -0.2540902541671665,
+      "direction": "lowers"
+    },
+    {
+      "feature": "categorical__is_gift_Y",
+      "coefficient": 0.25057812463152496,
+      "direction": "raises"
+    },
+    {
+      "feature": "categorical__pincode_prefix_60",
+      "coefficient": -0.23020097258166816,
+      "direction": "lowers"
+    },
+    {
+      "feature": "numeric__customer_prior_orders",
+      "coefficient": 0.23003147379734082,
+      "direction": "raises"
+    },
+    {
+      "feature": "categorical__sales_channel_marketplace",
+      "coefficient": 0.2220332754564555,
+      "direction": "raises"
+    },
+    {
+      "feature": "categorical__product_family_Ceiling Fan",
+      "coefficient": -0.2123985288022973,
+      "direction": "lowers"
+    },
+    {
+      "feature": "categorical__product_family_Mixer Grinder",
+      "coefficient": -0.2119171091485648,
+      "direction": "lowers"
+    },
+    {
+      "feature": "categorical__payment_channel_prepaid_upi_partner_outlet",
+      "coefficient": -0.20801287703485016,
+      "direction": "lowers"
+    },
+    {
+      "feature": "numeric__discount_pct",
+      "coefficient": 0.20778973235313475,
+      "direction": "raises"
+    },
+    {
+      "feature": "categorical__family_high_discount_Robot Vacuum_1",
+      "coefficient": 0.19969394480723013,
+      "direction": "raises"
+    },
+    {
+      "feature": "categorical__payment_zero_pincode_prepaid_upi_0",
+      "coefficient": -0.18110850494808317,
+      "direction": "lowers"
+    },
+    {
+      "feature": "categorical__first_time_payment_1_cod",
+      "coefficient": 0.17683063343718963,
+      "direction": "raises"
+    },
+    {
+      "feature": "categorical__product_family_Water Purifier",
+      "coefficient": 0.16636862471133182,
+      "direction": "raises"
+    },
+    {
+      "feature": "categorical__sku_KH-RV-03",
+      "coefficient": 0.1630265219933607,
+      "direction": "raises"
+    },
+    {
+      "feature": "categorical__product_model_name_Kestrel Robot Vacuum Max",
+      "coefficient": 0.1630265219933607,
+      "direction": "raises"
+    },
+    {
+      "feature": "categorical__payment_channel_prepaid_card_partner_outlet",
+      "coefficient": -0.15758824254548856,
+      "direction": "lowers"
+    },
+    {
+      "feature": "categorical__payment_mode_prepaid_upi",
+      "coefficient": -0.15431945189682428,
+      "direction": "lowers"
+    },
+    {
+      "feature": "categorical__payment_channel_emi_partner_outlet",
+      "coefficient": -0.15391039771579568,
+      "direction": "lowers"
+    },
+    {
+      "feature": "categorical__family_high_discount_Ceiling Fan_0",
+      "coefficient": -0.14384897098308036,
+      "direction": "lowers"
+    },
+    {
+      "feature": "categorical__product_family_Induction Cooktop",
+      "coefficient": -0.14059068342110276,
+      "direction": "lowers"
+    },
+    {
+      "feature": "categorical__pincode_prefix_56",
+      "coefficient": 0.14010846667241886,
+      "direction": "raises"
+    },
+    {
+      "feature": "categorical__first_time_payment_0_cod",
+      "coefficient": 0.13630133775886547,
+      "direction": "raises"
+    },
+    {
+      "feature": "categorical__family_high_discount_Mixer Grinder_1",
+      "coefficient": -0.13535063151123408,
+      "direction": "lowers"
+    },
+    {
+      "feature": "categorical__sku_KH-RV-02",
+      "coefficient": 0.1340582461559013,
+      "direction": "raises"
+    },
+    {
+      "feature": "categorical__product_model_name_Kestrel Robot Vacuum Pro",
+      "coefficient": 0.1340582461559013,
+      "direction": "raises"
+    },
+    {
+      "feature": "categorical__family_high_discount_Robot Vacuum_0",
+      "coefficient": 0.12782500965398605,
+      "direction": "raises"
+    },
+    {
+      "feature": "categorical__pincode_prefix_41",
+      "coefficient": -0.12438228900082106,
+      "direction": "lowers"
+    },
+    {
+      "feature": "categorical__family_high_discount_Water Purifier_1",
+      "coefficient": 0.11876260612380883,
+      "direction": "raises"
+    },
+    {
+      "feature": "categorical__sku_KH-MG-03",
+      "coefficient": -0.11848467240492355,
+      "direction": "lowers"
+    },
+    {
+      "feature": "categorical__product_model_name_Kestrel Mixer Grinder Max",
+      "coefficient": -0.11848467240492355,
+      "direction": "lowers"
+    },
+    {
+      "feature": "categorical__first_time_payment_1_prepaid_upi",
+      "coefficient": -0.11148366403286114,
+      "direction": "lowers"
+    },
+    {
+      "feature": "categorical__sku_KH-CF-01",
+      "coefficient": -0.1083078029974502,
+      "direction": "lowers"
+    },
+    {
+      "feature": "categorical__product_model_name_Kestrel Ceiling Fan Lite",
+      "coefficient": -0.1083078029974502,
+      "direction": "lowers"
+    }
+  ],
+  "catboost": [
+    {
+      "feature": "smoothed_prior_return_rate",
+      "importance": 19.00776191956447
+    },
+    {
+      "feature": "promised_delivery_days",
+      "importance": 14.276045339918758
+    },
+    {
+      "feature": "payment_mode",
+      "importance": 12.910676930102195
+    },
+    {
+      "feature": "sku_target_rate",
+      "importance": 8.50597568926082
+    },
+    {
+      "feature": "product_family",
+      "importance": 6.255174986231225
+    },
+    {
+      "feature": "pincode_prefix_frequency",
+      "importance": 5.427469485014982
+    },
+    {
+      "feature": "discount_diff_from_family",
+      "importance": 4.496203020570267
+    },
+    {
+      "feature": "payment_channel",
+      "importance": 4.303776058077981
+    },
+    {
+      "feature": "discount_pct",
+      "importance": 2.8774711245652598
+    },
+    {
+      "feature": "payment_zero_pincode",
+      "importance": 2.681265204332423
+    },
+    {
+      "feature": "customer_prior_orders",
+      "importance": 2.4994145370207486
+    },
+    {
+      "feature": "pincode_prefix_target_rate",
+      "importance": 2.2799899868828097
+    },
+    {
+      "feature": "is_gift",
+      "importance": 2.1441218236336774
+    },
+    {
+      "feature": "days_since_launch",
+      "importance": 1.9740546953869147
+    },
+    {
+      "feature": "family_high_discount",
+      "importance": 1.926168958060983
+    },
+    {
+      "feature": "sku_frequency",
+      "importance": 1.534190106045032
+    },
+    {
+      "feature": "sales_channel",
+      "importance": 1.516109317234243
+    },
+    {
+      "feature": "order_hour",
+      "importance": 1.3077512151966386
+    },
+    {
+      "feature": "day_of_week",
+      "importance": 0.994990047816438
+    },
+    {
+      "feature": "first_time_payment",
+      "importance": 0.8301066423274903
+    },
+    {
+      "feature": "pincode_prefix",
+      "importance": 0.6057797909279198
+    },
+    {
+      "feature": "sku",
+      "importance": 0.5060961329763245
+    },
+    {
+      "feature": "is_high_discount",
+      "importance": 0.3559233091712062
+    },
+    {
+      "feature": "note_length",
+      "importance": 0.24405013630158853
+    },
+    {
+      "feature": "product_model_name",
+      "importance": 0.24273231640953816
+    },
+    {
+      "feature": "note_has_office",
+      "importance": 0.07643134373858498
+    },
+    {
+      "feature": "has_note",
+      "importance": 0.07116387712265174
+    },
+    {
+      "feature": "is_post_oct2025",
+      "importance": 0.05344833000986199
+    },
+    {
+      "feature": "qty",
+      "importance": 0.027759479003753904
+    },
+    {
+      "feature": "is_zero_pincode",
+      "importance": 0.02286149562268821
+    },
+    {
+      "feature": "note_has_leave",
+      "importance": 0.015796841287918546
+    },
+    {
+      "feature": "is_first_time_buyer",
+      "importance": 0.015528364028277716
+    },
+    {
+      "feature": "is_weekend",
+      "importance": 0.013711496156407864
+    },
+    {
+      "feature": "note_has_gift",
+      "importance": 0.0
+    },
+    {
+      "feature": "note_has_urgent",
+      "importance": 0.0
+    },
+    {
+      "feature": "note_has_call",
+      "importance": 0.0
+    },
+    {
+      "feature": "note_has_open_box",
+      "importance": 0.0
+    }
+  ]
+}

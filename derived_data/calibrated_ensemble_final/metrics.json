@@ -1,0 +1,481 @@
+{
+  "status": "EXPLORATORY ONLY",
+  "label_maturity": "UNVERIFIED",
+  "holdout_reused_in_prior_experiments": true,
+  "holdout_start": "2026-04-01 00:12:00",
+  "holdout_end": "2026-06-30 23:08:00",
+  "training_end": "2026-03-31 21:29:00",
+  "training_rows": 8378,
+  "holdout_rows": 2126,
+  "holdout_positive_count": 245,
+  "holdout_positive_rate": 0.11523988711194733,
+  "class_weights": "none",
+  "blend_weights": {
+    "logistic_regression": 0.55,
+    "catboost": 0.45
+  },
+  "blend_models": [
+    "logistic_regression",
+    "catboost"
+  ],
+  "calibration": {
+    "catboost": {
+      "selected_method": "sigmoid",
+      "selection_fold": 3,
+      "selection_brier_scores": {
+        "sigmoid": 0.09162433449691662,
+        "isotonic": 0.09235620819362875
+      },
+      "oof_calibration_rows": 6282,
+      "calibrator_training_rows": 6282
+    },
+    "lightgbm": {
+      "selected_method": "sigmoid",
+      "selection_fold": 3,
+      "selection_brier_scores": {
+        "sigmoid": 0.09118446799065784,
+        "isotonic": 0.09200724023215802
+      },
+      "oof_calibration_rows": 6282,
+      "calibrator_training_rows": 6282
+    },
+    "logistic_regression": {
+      "selected_method": "sigmoid",
+      "selection_fold": 3,
+      "selection_brier_scores": {
+        "sigmoid": 0.09556029134112722,
+        "isotonic": 0.09611818922812994
+      },
+      "oof_calibration_rows": 6282,
+      "calibrator_training_rows": 6282
+    }
+  },
+  "oof_folds": [
+    {
+      "fold": 1,
+      "train_rows": 2096,
+      "validation_rows": 2094,
+      "train_last_timestamp": "2025-07-04 18:18:00",
+      "validation_start": "2025-07-04 18:40:00",
+      "validation_end": "2025-10-02 01:08:00"
+    },
+    {
+      "fold": 2,
+      "train_rows": 4190,
+      "validation_rows": 2094,
+      "train_last_timestamp": "2025-10-02 01:08:00",
+      "validation_start": "2025-10-02 01:59:00",
+      "validation_end": "2026-01-02 15:10:00"
+    },
+    {
+      "fold": 3,
+      "train_rows": 6284,
+      "validation_rows": 2094,
+      "train_last_timestamp": "2026-01-02 15:10:00",
+      "validation_start": "2026-01-02 15:49:00",
+      "validation_end": "2026-03-31 21:29:00"
+    }
+  ],
+  "features": [
+    "sales_channel",
+    "payment_mode",
+    "is_gift",
+    "sku",
+    "product_family",
+    "product_model_name",
+    "pincode_prefix",
+    "discount_pct",
+    "qty",
+    "promised_delivery_days",
+    "customer_prior_orders",
+    "smoothed_prior_return_rate",
+    "is_first_time_buyer",
+    "is_zero_pincode",
+    "has_note",
+    "note_length",
+    "note_has_gift",
+    "note_has_urgent",
+    "note_has_call",
+    "note_has_office",
+    "note_has_leave",
+    "note_has_open_box",
+    "order_hour",
+    "day_of_week",
+    "is_weekend",
+    "is_post_oct2025",
+    "days_since_launch",
+    "discount_diff_from_family"
+  ],
+  "excluded_features": [
+    "pickup_scheduled_at",
+    "last_service_event_type",
+    "source",
+    "order_value_inr",
+    "customer_tenure_days",
+    "is_retroactive_signup",
+    "catalog_net_value"
+  ],
+  "feature_time_safety": "Fold-local family discount means; prior counters are used as documented pre-order counts; current signup and unversioned price references excluded.",
+  "baseline_gate": {
+    "roc_auc_strictly_greater_than": 0.7057,
+    "pr_auc_strictly_greater_than": 0.2584,
+    "weighted_blend_beats_both": true
+  },
+  "baseline_prediction_source": "Predictions from the saved prior Logistic Regression pipeline.",
+  "results": {
+    "catboost": {
+      "roc_auc": 0.7490067159240091,
+      "pr_auc": 0.3523662126631003,
+      "brier_score": 0.09001318950962557,
+      "top_15_percent": {
+        "flagged_count": 319,
+        "precision": 0.32601880877742945,
+        "recall": 0.42448979591836733,
+        "f1": 0.36879432624113473,
+        "expected_net_savings_rs": 19993.894056229183,
+        "true_positive_count": 104
+      },
+      "top_20_percent": {
+        "flagged_count": 426,
+        "precision": 0.28169014084507044,
+        "recall": 0.4897959183673469,
+        "f1": 0.3576751117734725,
+        "expected_net_savings_rs": 21051.80539386982,
+        "true_positive_count": 120
+      }
+    },
+    "lightgbm": {
+      "roc_auc": 0.734207813907062,
+      "pr_auc": 0.3183693453850815,
+      "brier_score": 0.0918914280333547,
+      "top_15_percent": {
+        "flagged_count": 319,
+        "precision": 0.29780564263322884,
+        "recall": 0.3877551020408163,
+        "f1": 0.33687943262411346,
+        "expected_net_savings_rs": 24851.21314017006,
+        "true_positive_count": 95
+      },
+      "top_20_percent": {
+        "flagged_count": 426,
+        "precision": 0.2676056338028169,
+        "recall": 0.46530612244897956,
+        "f1": 0.3397913561847988,
+        "expected_net_savings_rs": 27938.19883461464,
+        "true_positive_count": 114
+      }
+    },
+    "logistic_regression": {
+      "roc_auc": 0.7540517961570593,
+      "pr_auc": 0.36790760162206143,
+      "brier_score": 0.0920404904069396,
+      "top_15_percent": {
+        "flagged_count": 319,
+        "precision": 0.3072100313479624,
+        "recall": 0.4,
+        "f1": 0.34751773049645396,
+        "expected_net_savings_rs": 11667.469809622726,
+        "true_positive_count": 98
+      },
+      "top_20_percent": {
+        "flagged_count": 426,
+        "precision": 0.2746478873239437,
+        "recall": 0.4775510204081633,
+        "f1": 0.34873323397913564,
+        "expected_net_savings_rs": 11941.38107782359,
+        "true_positive_count": 117
+      }
+    },
+    "weighted_blend": {
+      "roc_auc": 0.7544488927947576,
+      "pr_auc": 0.3658019667754844,
+      "brier_score": 0.09075686722593446,
+      "top_15_percent": {
+        "flagged_count": 319,
+        "precision": 0.32601880877742945,
+        "recall": 0.42448979591836733,
+        "f1": 0.36879432624113473,
+        "expected_net_savings_rs": 15301.218663256426,
+        "true_positive_count": 104
+      },
+      "top_20_percent": {
+        "flagged_count": 426,
+        "precision": 0.2793427230046948,
+        "recall": 0.4857142857142857,
+        "f1": 0.3546944858420268,
+        "expected_net_savings_rs": 15885.490931334432,
+        "true_positive_count": 119
+      }
+    },
+    "saved_logistic_baseline": {
+      "roc_auc": 0.7056928034371643,
+      "pr_auc": 0.25839935805141656,
+      "brier_score": 0.21666781985886835,
+      "top_15_percent": {
+        "flagged_count": 319,
+        "precision": 0.25705329153605017,
+        "recall": 0.3346938775510204,
+        "f1": 0.29078014184397166,
+        "expected_net_savings_rs": 77626.5968978988,
+        "true_positive_count": 82
+      },
+      "top_20_percent": {
+        "flagged_count": 426,
+        "precision": 0.2347417840375587,
+        "recall": 0.40816326530612246,
+        "f1": 0.2980625931445603,
+        "expected_net_savings_rs": 99136.20939598534,
+        "true_positive_count": 100
+      }
+    },
+    "user_stated_baseline_reference": {
+      "roc_auc": 0.7057,
+      "pr_auc": 0.2584,
+      "scores_available": false
+    },
+    "majority_class_baseline": {
+      "roc_auc": 0.5,
+      "pr_auc": 0.11523988711194733,
+      "scores_available": false,
+      "accuracy": 0.8847601128880527,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0
+    }
+  },
+  "decile_calibration": [
+    {
+      "decile": 1,
+      "rows": 213,
+      "observed_return_rate": 0.018779342723004695,
+      "mean_predicted_probability": 0.02259775952354913
+    },
+    {
+      "decile": 2,
+      "rows": 213,
+      "observed_return_rate": 0.018779342723004695,
+      "mean_predicted_probability": 0.0317455021114484
+    },
+    {
+      "decile": 3,
+      "rows": 212,
+      "observed_return_rate": 0.05660377358490566,
+      "mean_predicted_probability": 0.040592549805777964
+    },
+    {
+      "decile": 4,
+      "rows": 213,
+      "observed_return_rate": 0.06572769953051644,
+      "mean_predicted_probability": 0.05007806973773383
+    },
+    {
+      "decile": 5,
+      "rows": 212,
+      "observed_return_rate": 0.06132075471698113,
+      "mean_predicted_probability": 0.05942594786492995
+    },
+    {
+      "decile": 6,
+      "rows": 213,
+      "observed_return_rate": 0.107981220657277,
+      "mean_predicted_probability": 0.07121716801828636
+    },
+    {
+      "decile": 7,
+      "rows": 212,
+      "observed_return_rate": 0.1179245283018868,
+      "mean_predicted_probability": 0.0845609332359489
+    },
+    {
+      "decile": 8,
+      "rows": 213,
+      "observed_return_rate": 0.14553990610328638,
+      "mean_predicted_probability": 0.10385719004343462
+    },
+    {
+      "decile": 9,
+      "rows": 212,
+      "observed_return_rate": 0.17452830188679244,
+      "mean_predicted_probability": 0.13854276162810047
+    },
+    {
+      "decile": 10,
+      "rows": 213,
+      "observed_return_rate": 0.38497652582159625,
+      "mean_predicted_probability": 0.27045283025240624
+    }
+  ],
+  "failure_slices": {
+    "post_dispatch_evidence": {
+      "description": "Orders with a pickup timestamp or non-NONE service event; excluded from model features.",
+      "rows": 893,
+      "positive_count": 244,
+      "positive_rate": 0.2732362821948488,
+      "roc_auc": 0.7125653590643866,
+      "pr_auc": 0.5282710789351813,
+      "brier_score": 0.2039643082265049,
+      "top_15_percent": {
+        "flagged_count": 134,
+        "precision": 0.582089552238806,
+        "recall": 0.319672131147541,
+        "f1": 0.41269841269841273,
+        "expected_net_savings_rs": 9833.443641516013,
+        "true_positive_count": 78
+      },
+      "top_20_percent": {
+        "flagged_count": 179,
+        "precision": 0.5195530726256983,
+        "recall": 0.38114754098360654,
+        "f1": 0.4397163120567376,
+        "expected_net_savings_rs": 10779.131662215732,
+        "true_positive_count": 93
+      }
+    },
+    "zero_pincode_walk_ins": {
+      "description": "Walk-in partner orders using the 000000 pincode sentinel.",
+      "rows": 171,
+      "positive_count": 21,
+      "positive_rate": 0.12280701754385964,
+      "roc_auc": 0.7476190476190476,
+      "pr_auc": 0.4260475714125905,
+      "brier_score": 0.09356105772097875,
+      "top_15_percent": {
+        "flagged_count": 26,
+        "precision": 0.2692307692307692,
+        "recall": 0.3333333333333333,
+        "f1": 0.2978723404255319,
+        "expected_net_savings_rs": 1554.0414932597505,
+        "true_positive_count": 7
+      },
+      "top_20_percent": {
+        "flagged_count": 35,
+        "precision": 0.2857142857142857,
+        "recall": 0.47619047619047616,
+        "f1": 0.3571428571428571,
+        "expected_net_savings_rs": 1673.3809198627573,
+        "true_positive_count": 10
+      }
+    },
+    "pre_oct_2025_migration": {
+      "description": "Orders before the October 2025 migration boundary; expected empty in Q2 2026.",
+      "rows": 0,
+      "positive_count": 0,
+      "positive_rate": null,
+      "ranking_metrics_available": false
+    },
+    "post_oct_2025_migration": {
+      "description": "Orders on or after the October 2025 migration boundary.",
+      "rows": 2126,
+      "positive_count": 245,
+      "positive_rate": 0.11523988711194733,
+      "roc_auc": 0.7544488927947576,
+      "pr_auc": 0.3658019667754844,
+      "brier_score": 0.09075686722593446,
+      "top_15_percent": {
+        "flagged_count": 319,
+        "precision": 0.32601880877742945,
+        "recall": 0.42448979591836733,
+        "f1": 0.36879432624113473,
+        "expected_net_savings_rs": 15301.218663256426,
+        "true_positive_count": 104
+      },
+      "top_20_percent": {
+        "flagged_count": 426,
+        "precision": 0.2793427230046948,
+        "recall": 0.4857142857142857,
+        "f1": 0.3546944858420268,
+        "expected_net_savings_rs": 15885.490931334432,
+        "true_positive_count": 119
+      }
+    },
+    "current_shield_members": {
+      "description": "Current customer reference says Shield member; historical membership effective dates are unavailable.",
+      "rows": 478,
+      "positive_count": 98,
+      "positive_rate": 0.20502092050209206,
+      "roc_auc": 0.7670247046186895,
+      "pr_auc": 0.5114892557008828,
+      "brier_score": 0.15704657474024603,
+      "top_15_percent": {
+        "flagged_count": 72,
+        "precision": 0.5277777777777778,
+        "recall": 0.3877551020408163,
+        "f1": 0.44705882352941173,
+        "expected_net_savings_rs": 3413.4309044479114,
+        "true_positive_count": 38
+      },
+      "top_20_percent": {
+        "flagged_count": 96,
+        "precision": 0.4583333333333333,
+        "recall": 0.4489795918367347,
+        "f1": 0.45360824742268036,
+        "expected_net_savings_rs": 3564.333425497861,
+        "true_positive_count": 44
+      }
+    },
+    "current_non_shield_members": {
+      "description": "Current customer reference says non-member; historical membership effective dates are unavailable.",
+      "rows": 1648,
+      "positive_count": 147,
+      "positive_rate": 0.0891990291262136,
+      "roc_auc": 0.7568559735686413,
+      "pr_auc": 0.33418148318128893,
+      "brier_score": 0.07152963409981739,
+      "top_15_percent": {
+        "flagged_count": 248,
+        "precision": 0.2701612903225806,
+        "recall": 0.4557823129251701,
+        "f1": 0.33924050632911396,
+        "expected_net_savings_rs": 11894.725403221724,
+        "true_positive_count": 67
+      },
+      "top_20_percent": {
+        "flagged_count": 330,
+        "precision": 0.22424242424242424,
+        "recall": 0.5034013605442177,
+        "f1": 0.31027253668763105,
+        "expected_net_savings_rs": 12316.617566198955,
+        "true_positive_count": 74
+      }
+    }
+  },
+  "input": {
+    "input_rows": 11155,
+    "canonical_rows": 10504,
+    "duplicate_groups": 651,
+    "discarded_rows": 651,
+    "conflicting_groups": 0,
+    "train_positive_count": 1200,
+    "train_negative_count": 9304,
+    "test_rows": 2096,
+    "test_order_ids_match_sample": true
+  },
+  "submission_written": true,
+  "submission_path": "C:\\Users\\yoges\\kestral home\\predictions.csv",
+  "pre_dispatch_v2_update": {
+    "status": "EXPLORATORY ONLY",
+    "label_maturity": "UNVERIFIED",
+    "q2_holdout_reused": true,
+    "holdout_rows": 2126,
+    "holdout_positive_count": 245,
+    "q2_metrics": {
+      "roc_auc": 0.7568423222558561,
+      "pr_auc": 0.3735947141837897,
+      "brier_score": 0.09079543188900306
+    },
+    "top_15_percent": {
+      "flagged_count": 319,
+      "true_positive_count": 101,
+      "positive_count": 245,
+      "return_capture_rate": 0.4122448979591837,
+      "random_baseline_capture_rate": 0.15,
+      "lift_vs_random": 2.748299319727891,
+      "precision": 0.3166144200626959
+    },
+    "blend_weights": {
+      "logistic_regression": 0.86,
+      "catboost": 0.14
+    },
+    "selected_logistic_c": 0.05
+  }
+}
